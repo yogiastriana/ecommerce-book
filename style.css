@@ -1,0 +1,41 @@
+/* Root */
+*, html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Bagian Hero Section */
+.hero-section {
+  background-image: url(assets/img/img1.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; /* ini agar gambar fullscren*/ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+/* Bagian Hero Section */
+
+
+/* Atur Fonts */
+/* body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+} */
