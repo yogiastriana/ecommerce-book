@@ -1,5 +1,6 @@
 /* Root */
-*, html {
+*,
+html {
   scroll-behavior: smooth;
 }
 
@@ -14,7 +15,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh; /* ini agar gambar fullscren*/ 
+  min-height: 100vh; /* ini agar gambar fullscren*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,11 +32,30 @@ body {
 .hero-section p {
   font-size: 1.25rem;
 }
-/* Bagian Hero Section */
 
+.form-control:focus {
+  border-color: orange;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
 
-/* Atur Fonts */
-/* body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-} */
+/* Gallery */
+.portfolio-menu {
+  text-align: center;
+}
+.portfolio-menu ul li {
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-transition: all 05s ease;
+  -moz-transition: all 05s ease;
+  -ms-transition: all 05s ease;
+  -o-transition: all 05s ease;
+  transition: all 0.5s ease;
+}
+.portfolio-item .item {
+  /*width:303px;*/
+  float: left;
+  margin-bottom: 10px;
+}
