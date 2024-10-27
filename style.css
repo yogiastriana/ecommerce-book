@@ -1,9 +1,4 @@
-/* Root */
-*,
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   padding: 0;
   margin: 0;
@@ -11,7 +6,7 @@ body {
 
 /* Bagian Hero Section */
 .hero-section {
-  background-image: url(assets/img/img1.jpeg);
+  background-image: url(assets/img/img-backgroun.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -58,4 +53,31 @@ body {
   /*width:303px;*/
   float: left;
   margin-bottom: 10px;
+}
+
+/* Animasi Gallery */
+/* Styling untuk gambar dan animasi */
+.gallery-book img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease, box-shadow 0.3s ease;
+  filter: grayscale(100%);
+  width: 100%;
+  border-radius: 10px; /* Membuat sudut membulat */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Menambah bayangan */
+}
+
+/* Class untuk memicu animasi */
+.gallery-book img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-book img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+.gallery-book .col-lg-3 {
+  padding: 10px;
 }

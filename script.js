@@ -1,21 +1,21 @@
-// Bagian Gallery
-$('.portfolio-menu ul li').click(function () {
-  $('.portfolio-menu ul li').removeClass('active');
-  $(this).addClass('active');
+// Menggunakan Intersection Observer untuk menambahkan animasi muncul bertahap
+const images = document.querySelectorAll('.gallery-book img');
 
-  var selector = $(this).attr('data-filter');
-  $('.portfolio-item').isotope({
-    filter: selector,
-  });
-  return false;
-});
-$(document).ready(function () {
-  var popup_btn = $('.popup-btn');
-  popup_btn.magnificPopup({
-    type: 'image',
-    gallery: {
-      enabled: true,
-    },
-  });
-});
-// Bagian Gallery
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Tambahkan delay agar muncul bertahap
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 150); // delay 150ms untuk setiap gambar
+        observer.unobserve(entry.target); // Hentikan pengamatan setelah gambar muncul
+      }
+    });
+  },
+  {
+    threshold: 0.5, // Muncul ketika 50% gambar terlihat
+  }
+);
+
+images.forEach((img) => observer.observe(img));
